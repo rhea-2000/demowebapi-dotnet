@@ -10,9 +10,8 @@ jobs:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Build application
         run: dotnet build --configuration Release
       - name: Run tests and generate coverage report for Dotnet
